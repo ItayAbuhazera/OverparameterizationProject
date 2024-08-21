@@ -1,46 +1,74 @@
+# Overparameterization Project
 
-# SMAI Project
+This repository contains the implementation for the final project of the **Foundations of Overparameterized Machine Learning** course, Spring 2024. The project is based on the paper *"Understanding Deep Learning Requires Rethinking Generalization"* by Zhang et al. (ICLR, 2017). Our implementation focuses on investigating the effect of overparameterization and generalization in neural networks.
 
-## Understanding Deep Learning Requires Rethinking Generalization ([arxiv](https://arxiv.org/pdf/1611.03530.pdf))
+## Project Summary
 
+The goal of this project is to extend the experimental results from the paper by exploring the impact of overparameterization on the generalization error in neural networks. We focus on the double descent phenomenon, which was not discussed in the original paper. Our experiments are conducted using a convolutional neural network (CNN) on a subset of the CIFAR-10 dataset.
 
-### Aim:
-To understand what differentiates neural networks that generalize well from those that do not
+For more details, please refer to the report included in this repository.
 
-### Datasets:
-CIFAR10, ImageNet
+## Repository Contents
 
-### Models:
-MLP-512, Inception (tiny), Wide ResNet, AlexNet, Inception_v3
+- **Train and Plot.ipynb**: A Jupyter notebook containing the code used for training and plotting the results of our experiments on the CIFAR-10 dataset.
+- **report.pdf**: The project report detailing the summary, relation to the course material, experimental results, and the significance of our findings.
+- **data/**: The directory containing preprocessed datasets used in our experiments (not included in this repository for space reasons).
 
-### Experiments done:
-- Effect of explicit regularization like augmentation, weight decay, dropout
-- Effect of implicit regularization like BatchNorm
-- Input data corruption: Pixel shuffle, Gaussian pixels, Random pixels
-- Label corruption with different corruption levels from 1 to 100 %
+## Requirements
 
-### Results
-####  Data Corruption experiments
-<img src="imgs/Effect of different inputs on convergence.png">
+The code in this repository is implemented using Python and PyTorch. Below are the main dependencies required to run the notebook:
 
-<img src="imgs/Effect of different inputs on training the Neural Network.png">
+- Python 3.7 or higher
+- Jupyter Notebook
+- PyTorch
+- torchvision
+- matplotlib
+- numpy
+- tqdm
 
-#### Label corruption experiments
-<img src="imgs/Epochs to converge vs label corruption level-2.png">
+To install the required packages, you can run the following command:
+```bash
+pip install torch torchvision matplotlib numpy tqdm
+```
 
-<img src="imgs/Generalization error vs label corruption level-2.png">
+## Running the Notebook
 
-#### Regularization experiments
-<img src="imgs/Effect of Explicit Regularization on Generalization Performance.png">
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ItayAbuhazera/OverparameterizationProject.git
+   ```
+   ```bash
+   cd OverparameterizationProject
+   ```
 
-<img src="imgs/Effect of Implicit Regularisation on Generalization Performance.png">
+3. **Launch the Jupyter Notebook**:
+   ```bash
+   jupyter notebook
+   ```
+   
+   Then, open `Train and Plot.ipynb`.
 
-### Checkpoint files of Model Trained on ImageNet (Explicit Regularization):<br>
-- w/o Augmentation, Learning Rate Scheduler, Dropout: [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EZWUXUvNGQBCgcJcNxcFg9wB0aYKnly-6dGN8XQWMGTwMA?e=2jlPMu) <br>
-- w/o Augmentation, w/o Learning Rate Scheduler, Dropout : [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EYu6wOz7pHxKlo-njCcCRNcBBQxZNhVA_KZnajLpfY9x-Q?e=1KAW6n) <br>
-- with Augmentation, Learning Rate Scheduler, Dropout : [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EfM9FrpDFOxLvDBTgfwr9yABsQev1rBbHYfUQDg4mj_hfQ?e=hHIZG8)
+5. **Dataset Preparation**:
+   Ensure that you have the CIFAR-10 dataset (with a subset of the classes used in the project: 'car', 'frog', 'horse', 'ship'). If the dataset is not available, you may download and preprocess it directly in the notebook.
 
-### Team Members:
-- Siddhant Bansal ([@Sid2697](https://github.com/Sid2697))
-- Piyush Singh ([@piyush-kgp](http://github.com/piyush-kgp))
-- Madhav Agarwal ([@mdv3101](https://github.com/mdv3101))
+6. **Run the Notebook**:
+   Follow the instructions in the notebook to execute the training and plotting of the results. The notebook is designed to demonstrate the double descent phenomenon with varying model sizes.
+
+## Results
+
+The main finding of the project is the observation of the double descent phenomenon when training overparameterized neural networks on the CIFAR-10 dataset. The results are visualized in the notebook, showing the relationship between the number of model parameters and the generalization performance.
+
+## Challenges
+
+During the project, several challenges were encountered, including selecting appropriate model sizes and training configurations that could run efficiently on local machines. We overcame these by reducing the dataset size and fine-tuning the models.
+
+For a full discussion on the challenges and significance of the project, refer to the `report.pdf` file.
+
+## Authors
+
+- **Itay Abuhazira**
+- **Raz Monsonego**
+
+## License
+
+This project is licensed under the MIT License.
