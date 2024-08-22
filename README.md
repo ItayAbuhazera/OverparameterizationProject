@@ -10,7 +10,9 @@ For more details, please refer to the report included in this repository.
 
 ## Repository Contents
 
-- **Train and Plot.ipynb**: A Jupyter notebook containing the code used for training and plotting the results of our experiments on the CIFAR-10 dataset.
+- **Train and Plot.ipynb**: A Python notebook containing the code used for training, fine-tuning, and plotting the results of ALL of our experiments on the CIFAR-10 dataset. Notice that running this
+notebook is resource demanding! We recommend running it on a machine with a GPU, or running single-model notebooks such as `cnn_loss_generalization_OML_19488.ipynb`.
+- **cnn_loss_generalization_OML_19488.ipynb**: A Python notebook containing the code used for training a single CNN model on a subset of the CIFAR-10 dataset.
 - **report.pdf**: The project report detailing the summary, relation to the course material, experimental results, and the significance of our findings.
 
 ## Requirements
@@ -46,13 +48,13 @@ pip install torch torchvision matplotlib numpy tqdm
    jupyter notebook
    ```
    
-   Then, open `Train and Plot.ipynb`.
+   Then, open `cnn_loss_generalization_OML_19488.ipynb` or  `Train and Plot.ipynb`.
 
 5. **Dataset Preparation**:
    You don't need to manually download any dataset. The CIFAR-10 dataset will be automatically downloaded during the execution of the code. The notebook will further process and extract a subset containing the following classes: 'car', 'frog', 'horse', and 'ship'.
 
 6. **Run the Notebook**:
-   Follow the instructions in the notebook to execute the training and plotting of the results. The notebook is designed to demonstrate the double descent phenomenon with varying model sizes.
+   Simply run the cells of the notebook. The notebook is designed to demonstrate the double descent phenomenon with varying model sizes.
 
 For a full discussion on the challenges and significance of the project, refer to the `report.pdf` file.
 
