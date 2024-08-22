@@ -10,7 +10,7 @@ For more details, please refer to the report included in this repository.
 
 ## Repository Contents
 
-- **Train and Plot.ipynb**: A Python notebook containing the code used for training, fine-tuning, and plotting the results of ALL of our experiments on the CIFAR-10 dataset. Notice that running this
+- **train_plot.ipynb**: A Python notebook containing the code used for training, fine-tuning, and plotting the results of ALL of our experiments on the CIFAR-10 dataset. Notice that running this
 notebook is resource demanding! We recommend running it on a machine with a GPU, or running single-model notebooks such as `cnn_loss_generalization_OML_19488.ipynb`.
 - **cnn_loss_generalization_OML_19488.ipynb**: A Python notebook containing the code used for training a single CNN model on a subset of the CIFAR-10 dataset.
 - **report.pdf**: The project report detailing the summary, relation to the course material, experimental results, and the significance of our findings.
@@ -48,7 +48,7 @@ pip install torch torchvision matplotlib numpy tqdm
    jupyter notebook
    ```
    
-   Then, open `cnn_loss_generalization_OML_19488.ipynb` or  `Train and Plot.ipynb`.
+   Then, open `cnn_loss_generalization_OML_19488.ipynb` or  `train_plot.ipynb`.
 
 5. **Dataset Preparation**:
    You don't need to manually download any dataset. The CIFAR-10 dataset will be automatically downloaded during the execution of the code. The notebook will further process and extract a subset containing the following classes: 'car', 'frog', 'horse', and 'ship'.
